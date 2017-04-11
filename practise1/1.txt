@@ -1,0 +1,17 @@
+1.PS自由变换快捷键
+  Ctrl+T
+2.PS标尺快捷键
+  Ctrl+R       
+3.PS缩放快捷键
+  Ctrl+ +/-
+4.git配置用户名及邮箱命令
+  git config --global user.name "urname"
+  git config --global user.email "uremail@example.com"
+5.git新建仓库和添加仓库地址命令
+  git init 
+  git remote add origin https://git.coding.net/urname/xxx.git
+6.git上传命令
+  git add .
+  git commit -m "描述"
+  git push origin master
+

@@ -1,0 +1,50 @@
+#nav{
+    width:154px;
+    height:476px;/**/
+    position:absolute;
+    right:40px;
+    top:-432px;/**/
+    background-color:rgba(72,97,82,0.2);
+    transition:all 0.5s linear;
+    -webkit-transition:all 0.5s linear;
+    -ms-transition:all 0.5s linear;
+}
+#nav:hover{
+    top:0;
+}
+#nav li{/*40+4+10*/
+    width:150px;
+    height:40px;
+    line-height:40px;
+    font-weight:bolder;
+    font-size:20px;
+    border:2px solid rgba(255,255,255,0.9);
+    margin-top:10px;
+}
+#nav .button{
+    cursor:url(../images/LinkSelect.cur),auto;
+    font-family:zhongqian;
+    transition:all 0.5s linear;
+    -webkit-transition:all 0.5s linear;
+    -ms-transition:all 0.5s linear;
+}
+#nav .index{
+    font-family:xingkai;
+    font-size:30px;
+    color:black;
+}
+#nav .button:hover{
+    margin-left:-25px;
+}
+#nav .curr{
+    font-family:zhongqian;
+}
+#nav a{
+    display:block;
+    color:white;/**/
+    width:150px;
+    height:40px;
+}
+#nav .first{
+    margin-top:0;
+}

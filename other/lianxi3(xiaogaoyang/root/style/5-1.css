@@ -1,0 +1,72 @@
+body{
+    background-color:#eee;
+    overflow:hidden;
+}
+h1{
+    font-family:zhongqian;
+}
+#container{
+    width:1000px;
+    height:600px; 
+    margin:0 auto;
+    position:relative;
+}
+#container img{
+    padding:10px 10px 15px;
+    background:white;
+    border:1px solid #ddd;
+    box-shadow:2px 2px 3px rgba(50,50,50,0.4);
+    -webkit-transition:all 0.5s ease-in;
+    -moz-transition:all 0.5s ease-in;
+    -ms-transition:all 0.5s ease-in;
+    transition:all 0.5s ease-in;
+    position:absolute;
+    z-index:1;
+    cursor:url(../images/LinkSelect.cur),auto;
+}
+#container img:hover{
+    box-shadow:15px 15px 20px rgba(50,50,50,0.4); 
+    -webkit-transform:rotate(0deg) scale(1.00); 
+    -moz-transform:rotate(0deg) scale(1.00);
+    -ms-transform:rotate(0deg) scale(1.00); 
+    transform:rotate(0deg) scale(1.00); 
+    z-index:99;
+}
+ul{
+    width:200px;
+    height:50%;
+    z-index:2;
+}
+#left{
+    position:absolute;
+    left:0;
+    top:0;
+}
+#right{
+    position:absolute;
+    right:0;
+    top:0;
+}
+body li{
+    width:133px;
+    z-index:1;
+    margin:0 auto;
+}
+#leftbox,#rightbox{
+    width:200px;
+    height:100%;
+    background-image:url(../images/21.jpg);
+    background-size:contain;
+    overflow:hidden;
+    z-index:10;
+}
+#leftbox{
+    position:absolute;
+    left:2px;
+    top:0;
+}
+#rightbox{
+    position:absolute;
+    right:2px;
+    top:0;
+}

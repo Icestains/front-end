@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="./学生在线报名_files/checkbix.css">
+		<link href="./学生在线报名_files/sweetalert.min.css" rel="stylesheet">
+	
+	<title>学生在线报名new</title>
+	<style type="text/css">
+
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				background: #38272c;
+				/* overflow: hidden; */
+			}
+			/* 通过测量大概知道方块的宽高为16*86px */
+		#top-left-box {
+			width: 40px;
+			height: 86px;
+			background: #FFcc00;
+			/* 测的该方块距离左边有20px */
+				margin-left: 50px;
+			}
+			/* 该元素距离顶部有60px */
+		#top-right-img {
+				/* 此处用padding或margin都可以，但是用margin会触发浏览器的一个解析问题，此处不深入讲解，所以直接采用padding */
+				padding-top: 600px;
+			}
+		#top {
+				width: 100%;
+				/* 通过ps取色获取颜色代码 */
+				background: #282720;
+				clear: both;
+				/* 清除浮动的方法有多种，我一般都是直接从网上搜 */
+				overflow: auto;
+				zoom: 1;
+			}
+			
+		#top-left {
+				float: right;
+			}
+			
+		#top-right {
+				float: right;
+				/* 距离右边143px */
+				margin-right: 200px;
+			}
+			/* 现在顶部的样式写完了，开始写中间的 */
+			/* 现在中间部分html写完了，开始写中间的css */
+			/* 同上面类似，分为左右两块，采用浮动方式 */
+			/* 中间部分与上面部分留有74px的距离 */
+
+		.center {
+				/* 清除浮动 */
+				padding-top: 100px;
+				background: #223335;
+        		overflow: hidden;
+			}
+
+		.center-warp {
+				/* 测量的该元素宽度为1000px */
+				width: 1000px;
+				/* 该行的作用为实现块级元素的居中显示 */
+				/* 由于元素已经居中了，所有center-left的margin-left可以不需要设置了 */
+				/* 高度为0，需要清除浮动，清楚浮动使用的情况：通常有一个父元素的他的子元素里有使用了浮动元素的时，这是要在他的父元素里设置清除浮动。所以父元素从刚才的center变为了center-warp,清楚浮动的设置也自然移动到该元素上来了 */
+				margin: auto auto;
+				overflow: auto;
+				zoom: 1;
+        		overflow: hidden;
+			}
+
+		.center-left {
+				/* 左边距离左边距为130px */
+				float: left;
+				width: 440px;
+			}
+
+		.center-right {
+				/* 此处左右两部分合起来应该是居中的，即左边边距离为相等，但设计图上存在一定的误差 */
+				/* 下面实现将左右两部分合起来居中 */
+				float: left;
+				/* 右边距离左边的为100px */
+				margin-left: 100px;
+				/* 496+440+100 */
+				/* 超出36px */
+				/* 测量与实际产生误差，暂时先不用管 */
+				width: 460px;
+				padding-top: 44px;
+			}
+
+		.tip {
+				color: #83ab33;
+				text-align: right;
+				/* 由于该元素为行内元素，默认情况下设置width是不起作用的 */
+				/* 所以需要将其改为块级元素 */
+				display: block;
+				width: 435px;
+				font-size: 16px;
+				/* 提示与下面有一定的距离 */
+				padding-bottom: 26px;
+			}
+
+		.info-input {
+				/* 每一个中这种元素上下距离都为35px */
+				margin-bottom: 40px;
+				width: 435px;
+				/* 高度取38px */
+				height: 38px;
+				/* 同时给刚才两个元素的父级清楚浮动 */
+				overflow: hidden;
+				zoom: 1;
+			}
+			/* 子代选择器，选中info-input下面的所有span */
+			
+		.info-input span {
+				/* 距离右边30px */
+				color: white;
+				margin-right: 30px;
+				/* 字体大小为28px */
+				font-size: 26px;
+				line-height: 38px;
+				float: left;
+				/* 加了float之后自动变为块级元素，不用手动修改display:block; */
+				/* 两个子元素宽度56+359   435 父元素宽度 */
+				width: 56px;
+				/* 刚才测的是56px */
+				text-align: center;
+				/* 设置字体种类的方法 */
+				/* font-family: ; */
+			}
+			
+		.info-input input[type='text'] {
+				/* 现在设置input的宽度 */
+				width: 335px;
+				padding-left: 10px;
+				/* 减少10px */
+				border-radius: 4px;
+				border-width: 0;
+				line-height: 38px;
+				/* 文字的行高等于元素的高度，使输入时文字上下居中 */
+				float: left;
+			}
+			
+		.group-type {
+				padding-left: 140px;
+				/* height: 220px; */
+				line-height: 20px;
+				color: #86848c;
+				padding-top: 15px;
+				padding-bottom: 15px;
+        font-size: 16px;
+			}
+			
+		.center-right .info-input span {
+				width: 110px;
+				/* 140-110 */
+				/* 这个30是多余设置的 */
+				/* padding-right: 30px; */
+				color: #8db934;
+				/* 宽度不够显示4个字 */
+				font-size: 27px;
+			}
+
+		.center-right .info-input {
+				width: 460px;
+				margin-bottom: 0;
+				/* 重置为0 */
+			}
+			
+		.center-right .info-input input {
+				width: 320px;
+			}
+			
+		.info-input textarea {
+				padding: 18px;
+				width: 282px;
+				/* 宽度与单行输入框宽度一致 */
+				height: 145px;
+        resize: none;
+			}
+			
+		.textarea {
+				height: 217px;
+			}
+			
+		.textarea textarea {
+				/* 该属性应该直接加在输入框上而不是父级上 */
+				border-radius: 4px;
+				/* 圆角 */
+			}
+			
+		.bottom-btn {
+				color: white;
+				background: #98d509;
+				text-align: center;
+				width: 134px;
+				height: 48px;
+				line-height: 48px;
+				font-size: 30px;
+				border-width: 0;
+				/* 清除白边 */
+				border-radius: 4px;
+				/* 圆角 */
+				cursor: pointer;
+			}
+			
+		.bottom {
+				/* 该属性使提交按钮居中，因为input默认为行内元素 */
+				background: #28272c;
+				text-align: center;
+				margin-bottom: 55px;
+			}
+			/*YJM*/
+			
+		label.checkbix {
+				color: white !important;
+			}
+			
+		.info-input div.info-checkbox {
+				width: 300px;
+				float: left;
+			}
+			
+		.center-right .info-input span.checkbox-span {
+				color: white;
+				font-size: 18px;
+			}
+			
+		.info-input input[type='checkbox'] {
+				width: auto !important;
+			}
+			
+			.checkbix>span {
+				border-color: white !important;
+			}
+			
+			input[type='checkbox'].checkbix:checked+ label> span:before {
+				left: 10% !important;
+				top: -3px !important;
+			}
+			
+			input[type='checkbox'].checkbix+ label> span {
+				margin-right: 0.2em!important;
+			}
+			
+			input[type='checkbox'].checkbix+ label {
+				margin-right: 18px;
+				margin-bottom: 5px;
+			}
+			
+			.group-col {
+				width: 50%;
+				float: left;
+			}
+			
+			#apply-group {
+				height: 100px;
+			}
+			/*.center-right .info-input input[type='checkbox']{
+				width: auto;
+			}*/
+			
+			.info-input select {
+				width: 345px;
+				border-radius: 4px;
+				border-width: 0;
+				height: 38px;
+				float: left;
+				font-size: 20px;
+			}
+			/*radio美化*/
+			/*after*/
+			
+			.magic-radio {
+				box-sizing: border-box;
+				padding: 0;
+				display: none;
+			}
+			
+			.magic-radio+label:after {
+				position: absolute;
+				display: none;
+				content: '';
+			}
+			
+			.magic-radio:checked+label:after {
+				display: block;
+			}
+			
+			.magic-radio+label.radio-label:after {
+				top: 7px;
+				left: 7px;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background: #98D509;
+			}
+			/*before*/
+			
+			.radio-label:before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				content: '';
+				border: 2px solid #c0c0c0;
+				border-radius: 50%;
+			}
+			
+			.radio-label {
+				position: relative;
+				display: block;
+				padding-left: 30px;
+				cursor: pointer;
+				vertical-align: middle;
+				color: white;
+				font-size: 14px;
+				line-height: 24px;
+				text-align: center;
+			}
+			
+			.radio-label:hover:before {
+				border: 2px solid #98D509;
+			}
+			
+			.magic-radio:checked+label.radio-label:before {
+				border: 2px solid #98D509;
+			}
+			
+			.radio-wrap {
+				float: left;
+				margin-right: 20px;
+				margin-top: 7px;
+			}
+			
+			#brief {}
+
+			.checkbix {
+        height: 18px !important;
+      }
+
+      #introduction {
+        width: 300px;
+        overflow: hidden;
+      }
+	</style>
+</head>
+<body>
+<div id="top">
+	<div id="top-left">
+		<div id="top-left-box"></div>
+	</div>
+	<div id="top-right">
+		<img src="./学生在线报名_files/1.png" alt="学生在线" id="top-right-img">
+	</div>
+</div>
+
+	<!-- 直接用表单包裹起来 -->
+		<!-- action为表单提交地址 -->
+		<!-- 通常地址为后端给出 -->
+		<!-- 这里随便写一个地址 -->
+		<form action="address" method="POST">
+			<div class="center">
+				<!-- 先将刚才的左右两部分包裹在一个div里 -->
+				<div class="center-warp">
+					<!-- 同样分为左右两块 -->
+					<div class="center-left">
+						<!-- 第一块由于为纯文字，所以直接用span -->
+						<!-- 空格在html里有两种表示方式，第一种直接一个空格，但是有缺陷，缺陷是不管你输入多少个空格，最后在浏览器显示时只会显示一个空格，第二种，用实体字符&nbsp; -->
+						<span class="tip">* 为了便于联系，请务必填写真实信息</span>
+						<div class="info-input">
+							<!-- 在刚才删除的地方 -->
+							<!-- 一般这种情况不是采用删除空格来处理，因为删除空格会使代码的结构变乱，不方便查看，采用的方法是将span元素变为块级元素，同时加浮动 -->
+							<span>姓名</span>
+							<input required="" type="text" name="name">
+						</div>
+						<!-- 使输入框对齐，一个汉字宽度与一个字母宽度不一致，通过使用空格来让他们宽度一致，或者直接设置span元素的宽度，然后将span元素的文字设为居中对齐，我采用第二种方法 -->
+						<div class="info-input">
+							<!-- 此处可以再加一个空格 -->
+							<span>Q Q</span>
+							<input required="" type="text" name="qqNumber">
+						</div>
+						<div class="info-input">
+							<span>手机</span>
+							<input required="" type="text" name="mobilePhone">
+						</div>
+						<div class="info-input">
+							<span>学院</span>
+							<!--<input type="text" name="college">-->
+							<select name="college" class="valid">
+								<option value="请选择学院">请选择学院</option>
+								<option value="矿业工程学院">矿业工程学院</option>
+								<option value="力学与建筑工程学院">力学与建筑工程学院</option>
+								<option value="机电工程学院">机电工程学院</option>
+								<option value="信息与电气工程学院">信息与电气工程学院</option>
+								<option value="资源与地球科学学院">资源与地球科学学院</option>
+								<option value="化工学院">化工学院</option>
+								<option value="环境与测绘学院">环境与测绘学院</option>
+								<option value="计算机科学与技术学院">计算机科学与技术学院</option>
+								<option value="管理学院">管理学院</option>
+								<option value="理学院">理学院</option>
+								<option value="文学与法政学院">文学与法政学院</option>
+								<option value="外国语言文化学院">外国语言文化学院</option>
+								<option value="体育学院">体育学院</option>
+								<option value="材料科学与工程学院">材料科学与工程学院</option>
+								<option value="艺术与设计学院">艺术与设计学院</option>
+								<option value="安全工程学院">安全工程学院</option>
+								<option value="电力工程学院">电力工程学院</option>
+								<option value="孙越崎学院">孙越崎学院</option>
+								<option value="国际学院">国际学院</option>
+								<option value="马克思主义学院">马克思主义学院</option>
+								<option value="应用技术学院">应用技术学院</option>
+							</select>
+						</div>
+						<div class="info-input">
+							<span>性别</span>
+							<!--<input type="text" name="gender">-->
+							<div class="radio-wrap">
+								<input type="radio" id="man" class="magic-radio" value="男" name="gender">
+								<label class="radio-label" for="man">男</label>
+							</div>
+							<div class="radio-wrap">
+								<input type="radio" id="woman" value="女" class="magic-radio" name="gender">
+								<label class="radio-label" for="woman">女</label>
+							</div>
+						</div>
+						<div class="info-input" style="height: auto;">
+							<span style="width:500px;text-align: left;">交流群QQ：551278140<br>邮箱：online_cumt@foxmail.com</span>
+						</div>
+					</div>
+					<!-- 与左边的第一个输入框竖直方向对齐 -->
+					<!-- 可以将center-rihgt的所有子元素的宽度设为470 -->
+					<div class="center-right">
+						<div id="brief" class="info-input textarea">
+							<span>个人简介</span>
+							<!-- 此处输入框与其他地方不同，采用textarea -->
+							<!-- name，id,cols,rows这些属性可以根据需要填写，不要的可以删除 -->
+							<textarea placeholder="个人简介包括特长，爱好，相关经验等。如有相关作品，可发到邮箱online_cumt@foxmail.com,
+邮件名为:学生在线招新+名字" name="resume"></textarea>
+						</div>
+						<div class="info-input" id="apply-group">
+							<span>申请小组</span>
+							<div class="info-checkbox">
+								<div class="group-col">
+                  <div> 
+									 <input id="d1" type="checkbox" name="theGroup" value="视觉设计" class="checkbix info-checkbox" data-text="视觉设计"><label aria-label="" role="checkbox" for="d1" class="checkbix"><span class=""></span>视觉设计</label>
+                  </div>
+									<div>
+                    <input id="d2" type="checkbox" name="theGroup" value="前端" class="checkbix info-checkbox" data-text="前端组"><label aria-label="" role="checkbox" for="d2" class="checkbix"><span class=""></span>前端组</label>
+                  </div>
+									<div>
+                    <input id="d3" type="checkbox" name="theGroup" value="后端" class="checkbix info-checkbox" data-text="后端组"><label aria-label="" role="checkbox" for="d3" class="checkbix"><span class=""></span>后端组</label>
+                  </div>
+									<div>
+                    <input id="d4" type="checkbox" name="theGroup" value="移动互联" class="checkbix info-checkbox" data-text="移动互联组"><label aria-label="" role="checkbox" for="d4" class="checkbix"><span class=""></span>移动互联组</label>
+                  </div>
+								</div>
+								<div class="group-col">
+                  <div><input id="d5" type="checkbox" name="theGroup" value="视频" class="checkbix info-checkbox" data-text="视频组"><label aria-label="" role="checkbox" for="d5" class="checkbix"><span class=""></span>视频组</label></div>
+                  <div><input id="d6" type="checkbox" name="theGroup" value="办公" class="checkbix info-checkbox" data-text="办公组"><label aria-label="" role="checkbox" for="d6" class="checkbix"><span class=""></span>办公组</label></div>
+                  <div><input id="d7" type="checkbox" name="theGroup" value="运营" class="checkbix info-checkbox" data-text="运营组"><label aria-label="" role="checkbox" for="d7" class="checkbix"><span class=""></span>运营组</label></div>
+								</div>
+							</div>
+						</div>
+						<p class="group-type" id="introduction"></p>
+						<!-- 追加一个类，重新设置高度 -->
+
+					</div>
+				</div>
+			</div>
+
+			<div class="bottom">
+				<!-- 只有一个提交按钮 -->
+				<!-- 通常有两种方法实现 -->
+				<!-- 第一种用input,提交通过表单或ajax -->
+				<!-- 第二种用a链接，提交通过ajax,这种较为常见 -->
+				<!-- 表单提交时通常需要检查输入是否有问题，通过js来检测，常见的检测有，检测是否为空，输入格式是否正确，比如手机号邮箱号，这里就不讲了，今天的到这里结束 -->
+				<input type="submit" value="提交" class="bottom-btn">
+			</div>
+		</form>
+
+		<!-- 现在需在有两种情况 -->
+		<!-- 对于第一页的表单数据提交 -->
+		<!-- 第一种用input,提交通过表单或ajax -->
+		<!-- 第二种用a链接，提交通过ajax,这种较为常见 -->
+		<!-- 如上所说，有两种方式 -->
+		<!-- 现在讲第一种，第二种为使用ajax暂时不讲 -->
+		<!-- 第一种使用表单 -->
+		<script type="text/javascript" src="./学生在线报名_files/checkbix.js"></script>
+		<script src="./学生在线报名_files/jquery-1.8.0.min.js"></script>
+		<script src="./学生在线报名_files/sweetalert.min.js"></script>
+		<script type="text/javascript">
+			checkbix.init();
+			$(function){
+				var form = $("form");
+				form.submit(function(){
+					var gender = $("input[name='gender']");
+					var group = $("input [name='theGroup']");
+					var colleage = $("select[name='colleage']");
+					var genderIsChecked = false;
+					var groupIsChecked = false;
+					gender.each(function(i)){
+						if(this.checked){
+							genderIsChecked = true;
+						}
+					})
+					group.each(function(i)){
+						if(this.checked){
+							groupIsChecked = true;
+						}
+					})
+					
+					if(colleage == '请选择学院'){
+						swal("请正确填写", "请选择学院!", "warning");
+						return false;
+					}
+					if(!genderIsChecked){
+						swal("请正确填写", "请选择性别!", "warning");
+						return false;
+					}
+					if(!groupIsChecked){
+						swal("请正确填写", "请至少选择一组!", "warning");
+						return false;
+					}
+
+				})
+				
+				var groupCheckBoxs = $("input[name='theGroup']");
+				var introduction=$("#introduction");
+				groupCheckBoxs.change(function() {
+					switch(this.value) {
+						case '视觉设计':
+						introduction.text("打开一个网站或一个APP,你能看得到和感受到的地方，就有我们的存在。这里有热爱设计，充满创意的小伙伴。我们利用Ps,Ai,Fw等软件为各种网站，APP 和海报设计呈现精美的UI和视觉效果。");
+							break;
+						case '前端':
+						introduction.text("酷炫界面是前端，狂拽吊炸是前端，前端，哎呦不错哈");
+							break;
+						case '后端':
+						introduction.text("后端就是这么吊,什么都能干,么都能干,都能干,能干,干");
+							break;
+						case '移动互联':
+						introduction.text("在这个移动终端驰骋的时代，各大APP如春后雨笋般登上时代的舞台，“萌宠”（Android和ios）在等待它们的小主人，来吧，移动互联组在等你，给你想要的舞台，做一个移动互联时代最耀眼的“舞者”。");
+							break;
+						case '办公':
+						introduction.text("酷炫office，策划统筹，制度执行，有形装逼同样致命");
+							break;
+						case '运营':
+						introduction.text("运营即对运营过程的计划、组织、实施和控制，是与产品和服务密切相关的各项工作的总成。目前互联网企业都必须具备运营工作。“运营”的角色因团队而千差万别。学生在线运营组，涵盖整个团队的产品研发、产品推广、团队宣传以及易班建设。是维护学生在线产品运作和形象推广的小组，任重且道远。作为校内互联网团队，学生在线为学生体验运营工作的提供了良好的实践机会，并于2016年开始建设矿大易班总站，因此运营组的工作将分为团队运营和矿大易班。探求新的境界，静候你的加入。");
+							break;
+						case '视频':
+						introduction.text("轻松剪辑找pr 酷炫后期看ae我们有的是 一块钱特效带你装逼带你飞");
+							break;
+						default:
+							break;
+					}
+				})
+
+			})
+		</script>
+
+
+
+</body>
+</html>
