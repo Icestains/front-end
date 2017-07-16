@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML语义化标签</title>
+
+	<style>
+		/* body,p,h1,h2,h3,h4,h5,h6,dl,dd{margin:0; font-size:12px;/* font-family:XX; }
+		ol,ul{list-style:none;padding:0;margin:0;}
+		a{text-decoration:none;}
+		img{border:none;} */
+
+		
+
+	</style>
+
+</head>
+<body>
+		<div id="div1">这是div里的内容 语义化HTML：用最恰当的HTML元素标记的内容。
+
+      
+         优点：1 提升可访问性；
+
+                    2 SEO；
+
+                    3 结构清晰，利于维护；
+
+
+
+          （HTML5旧的行内元素都被归类为短语内容）
+
+
+
+           通用容器：div——块级通用容器；span——短语内容无语义容器。
+
+           如果语义不合适，也不要霸王硬上弓，=。。 =老实的用div吧。</div>
+        <p><title></title>：简短、描述性、唯一（提升搜索引擎排名）。
+
+         搜索引擎会将title作为判断页面主要内容的指标，有效的title应该包含几个与页面内容密切相关的关键字，建议将title核心内容放在前60个字符中。
+
+</p>
+		<span>这里是span里的内容</span>
+		<h1>这里是H1里的内容h1~h6分级标题，用于创建页面信息的层级关系。
+
+         对于搜索引擎而言，如果标题与搜索词匹配，这些标题就会被赋予很高的权重，尤其是h1</h1>
+		<h2>这里是H2里的内容</h2>
+		<h3>这里是H3里的内容</h3>
+		<h4>这里是H4里的内容</h4>
+		<h5>这里是H5里的内容</h5>
+		<h6>这里是H6里的内容</h6>
+		<header>这里是header里的内容 页眉通常包括网站标志、主导航、全站链接以及搜索框。</header>
+		<nav>这里是nav里的内容 标记导航，仅对文档中重要的链接群使用。
+
+</nav>
+		<main>这里是main里的内容 页面主要内容，一个页面只能使用一次。如果是web应用，则包围其主要功能。</main>
+		<article>这里是article里的内容 包含像报纸一样的内容= =||是这么理解的，表示文档、页面、应用或一个独立的容器</article>
+		<section>这里是section里的内容 具有相似主题的一组内容，比如网站的主页可以分成介绍、新闻条目、联系信息等条块。</section>
+		<aside>这里是aside里的内容 指定附注栏，包括引述、侧栏、指向文章的一组链接、广告、友情链接、相关产品列表等。</aside>
+		
+		<small>这里是small里的内容 指定细则，输入免责声明、注解、署名、版权。</small><br>
+		<strong>这里是strong里的内容 表示内容重要性。</strong><br>
+		<em>这里是em里的内容 标记内容着重点（大量用于提升段落文本语义）。</em><br>
+		<b>这里是b里的内容 出于实用目的提醒读者的一块文字，不传达任何额外的重要性</b><br>
+		<i>这里是i里的内容 不同于其他文字的文字</i><br>
+		<mark>这里是mark里的内容 突出显示文本（yellow），提醒读者。</mark>
+		<figure>这里是figure里的内容 创建图（默认有40px左右margin）。
+		<figcaption>这里是figcaption里的内容 figure的标题，必须是figure内嵌的第一个或者最后一个元素。</figcaption></figure>
+		<cite>这里是cite里的内容 指明引用或者参考，如图书的标题，歌曲、电影、等的名称，演唱会、音乐会、规范、报纸、或法律文件等。</cite><br>
+		<blockquoto>这里是blockquoto里的内容 引述文本，默认新的一行显示。</blockquoto><br>
+		<q>这里是q里的内容 短的引述（跨浏览器问题，尽量避免使用）。</q><br>
+		<time>2017.07.14 标记时间。datetime属性遵循特定格式，如果忽略此属性，文本内容必须是合法的日期或者时间格式。</time><br>
+		<abbr title="js">这里是abbr里的内容 解释缩写词。使用title属性可提供全称，只在第一次出现时使用就ok。</abbr><br>
+		<dfn>这里是dfn里的内容 定义术语元素，与定义必须紧挨着，可以在描述列表dl元素中使用。</dfn><br>
+		<address>这里是address里的内容 作者、相关人士或组织的联系信息（电子邮件地址、指向联系信息页的链接）。</address>
+		<del>这里是del里的内容 移除的内容。</del><br>
+		<ins>这里是ins里的内容 添加的内容。</ins><br>
+		<code>这里是code里的内容 标记代码。包含示例代码或者文件名 （< &lt;  > &gt;）</code>
+		<pre>这里是pre里的内容 预格式化文本。保留文本固有的换行和空格。</pre>
+		<meter>这里是meter里的内容 表示分数的值或者已知范围的测量结果。如投票结果。</meter><br>
+		<progress>这里是progress里的内容 完成进度。可通过js动态更新value。</progress>
+
+	<footer>这里是footer里的内容 页脚，只有当父级是body时，才是整个页面的页脚。</footer>
+</body>
+</html>
