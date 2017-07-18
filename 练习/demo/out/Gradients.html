@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>gradients</title>
+    <style>
+        .all{
+            width: 300px;
+            height: 80px;
+            float: left;
+            margin-left: 20px;
+        }
+
+        .clearFloat{
+            clear: both;
+        }
+
+        .one{
+            background: -webkit-linear-gradient(top,red,green);
+            background: linear-gradient(top,red,green);
+        }
+
+        .tow{
+            background: -webkit-linear-gradient(left,red,green);
+            background: linear-gradient(left,red,green);
+        }
+
+        .three{
+            background: -webkit-linear-gradient(top left,red,green);
+            background: linear-gradient(top left,red,green);
+        }
+
+        .four{
+            background: -webkit-linear-gradient(top left,rgba(211,111,111,0),rgba(211,111,111,1));
+            background: linear-gradient(top left,rgba(211,111,111,0),rgba(211,111,111,1));
+        }
+
+        .five{
+            background: -webkit-linear-gradient(left,rgba(211,111,111,0),rgba(211,111,111,1));
+            background: linear-gradient(left,rgba(211,111,111,0),rgba(211,111,111,1));
+        }
+
+        .six{
+            background: -webkit-linear-gradient(top left,red,green,deepskyblue,palevioletred);
+            background: linear-gradient(top left,red,green,deepskyblue,palevioletred);
+        }
+
+        .seven{
+            background: -webkit-linear-gradient(top left,red 2%,green 6%,deepskyblue 80%,palevioletred);
+            background: linear-gradient(top left,red 2%,green 6%,deepskyblue 80%,palevioletred);
+        }
+
+        .a{
+            background: -webkit-radial-gradient(green,red);
+            background: radial-gradient(green,red);
+        }
+
+        .b{
+            background: -webkit-radial-gradient(green,red,yellow,deepskyblue);
+            background: radial-gradient(green,red,yellow,deepskyblue);
+        }
+
+        .c{
+            background: -webkit-radial-gradient(circle at top,green,red);
+            background: radial-gradient(circle at top,green,red);
+        }
+
+        .d{
+            background: -webkit-radial-gradient(circle ,green,red);
+            background: radial-gradient(circle ,green,red);
+        }
+    </style>
+</head>
+<body>
+
+<!--线性渐变-->
+<div class="all one"></div>
+<div class="all tow"></div>
+<div class="all three"></div>
+<div class="all four"></div>
+<div class="all five"></div>
+<div class="all six"></div>
+<div class="all seven"></div>
+<div class="clearFloat"></div>
+<!--线性渐变-->
+
+<!--径向渐变-->
+<div class="all a"></div>
+<div class="all b"></div>
+<div class="all c"></div>
+<div class="all d"></div>
+</body>
+</html>

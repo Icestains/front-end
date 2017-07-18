@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>双飞翼布局/title>
+
+<style>
+	/**{
+		margin:0;
+		padding: 0;
+	}*/
+	header,footer{
+		width: 100%;
+		border: 1px solid black;
+		background: #66ccff;
+		text-align: center;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.all{
+		height: 400px;
+		word-break: break-all;
+		position: relative;
+		float: left;
+	}
+	
+	.main{
+		width: 100%;
+		background: black;
+	}
+
+	.middle{
+		margin:0 200px;
+		background: red;
+	}
+
+	.left,.right{
+		width: 200px;
+	}
+	
+	.left{
+		background: green;
+		margin-left: -100%;
+	}
+	
+	.right{
+		margin-left: -200px;
+		background: yellow;
+	}
+
+</style>
+
+</head>
+<body>
+
+	<header>header</header>
+
+	<div class="container">
+		<div class="main all">
+			<div class="middle all">middleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</div>
+		</div>
+		<div class="left all">leftttttttttttttttttttttttttttttttttt</div>
+		<div class="right all">rightttttttttttttttttttttttttttttttt</div>
+	</div>
+
+	<footer>footer</footer>
+	
+</body>
+</html>

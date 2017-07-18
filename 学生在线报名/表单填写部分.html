@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>表单填写部分</title>
+	<style type="text/css">
+
+	header{
+		width: 100%;height: 50px;
+		background:#66ccff; 
+		text-align: center;
+		font-size: 30px;
+		line-height: 50px;
+	}
+
+	.main{
+		font-size: 26px;
+	}
+
+	.info-input{
+		width: 400px;height: 50px;
+		background: #9999ff;
+		margin-bottom: 10px;
+	}
+
+	.info-input span{
+		margin-left: 10px;
+		width: 80px;
+		line-height: 50px;
+		float: left;
+	}
+
+	.info-input input[type='text']{
+		margin:0 0;padding-left: 10px;
+		width: 290px; height: 30px;
+		border-width: 0px;
+		border-radius: 4px;
+	}
+
+	.info-input select{
+		width: 300px; height: 30px;
+		border-width: 0;
+		border-radius: 4px;
+	}
+
+	.gender{
+		margin:0 0;
+		width: 25px; height: 25px;
+	}
+
+	.label{
+		width: 30px;height: 30px;
+		font-size: 10px;
+		display: inline-block;
+		line-height: 40px;
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	button{
+		width: 80px;height: 40px;
+		font-size: 18px;
+		border-width: 0;
+		border-radius: 6px;
+		background: yellow;
+		left: 160px;
+		top: 30px;
+		position: relative;
+	}
+
+	</style>
+	
+	
+	
+</head>
+<body>
+
+	<header>header</header>
+	
+	<div class="main">
+
+		<div class="info-input">
+				<span>姓名</span>
+				<input type="text" value="">
+		</div>
+		
+		<div class="info-input">
+				<span>Q Q</span>
+				<input type="text" value="">
+		</div>
+		
+		<div class="info-input">
+				<span>手机</span>
+				<input type="text" value="">
+		</div>
+		
+		<div class="info-input">
+				<span>学号</span>
+				<input type="text" value=""><br>
+		</div>
+		
+		<div class="info-input">
+			<span class="college">学院</span>
+			<!--<input type="text" name="college">-->
+			<select class="valid">
+				<option value="请选择学院">请选择学院</option>
+				<option value="能源材料物理学部">能源材料物理学部</option>
+				<option value="矿业工程学院">矿业工程学院</option>
+				<option value="安全工程学院">安全工程学院</option>
+				<option value="力学与土木工程学院">力学与土木工程学院</option>
+				<option value="机电工程学院">机电工程学院</option>
+				<option value="信息与控制工程学院">信息与控制工程学院</option>
+				<option value="资源与地球科学学院">资源与地球科学学院</option>
+				<option value="化工学院">化工学院</option>
+				<option value="环境与测绘学院">环境与测绘学院</option>
+				<option value="电气与动力工程学院">电气与动力工程学院</option>
+				<option value="数学学院">数学学院</option>
+				<option value="计算机科学与技术学院">计算机科学与技术学院</option>
+				<option value="管理学院">管理学院</option>
+				<option value="公共管理学院">公共管理学院</option>
+				<option value="马克思主义学院">马克思主义学院</option>
+				<option value="外国语言文化学院">外国语言文化学院</option>
+				<option value="建筑设计学院">建筑设计学院</option>
+				<option value="孙越崎学院">孙越崎学院</option>
+				<option value="国际学院">国际学院</option>
+				<option value="职业与继续教育部">职业与继续教育部</option>
+			</select>
+		</div>
+		
+		<div class="info-input">
+			<span>性别</span>
+			<input class="gender" id="male" type="radio"  value="男" name="gender">
+			<label class="label" for="male">男</label>
+			<input class="gender" id="male" type="radio" value="女" name="gender">
+			<label class="label" for="famale">女</label>
+		</div>
+
+		<button class="submit">提交</button>
+		
+
+	</div>
+</body>
+<html>
