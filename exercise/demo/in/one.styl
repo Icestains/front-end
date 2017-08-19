@@ -1,0 +1,32 @@
+$myWidth = 200px
+$myHeight = 200px
+
+div
+  width 400px
+  height 400px
+  border 1px solid black
+  background green
+
+h1
+  width $myWidth
+  height $myHeight
+  border 1px solid black
+  background green
+
+ p
+  border 1px solid black
+
+for car in 1 2 3 4 5
+  p:nth-child({car})
+    width: 15px * car
+
+// 这是一个注释
+
+/*
+ * 多行注释
+ */
+
+
+/*!
+ * 多行缓冲注释
+ */

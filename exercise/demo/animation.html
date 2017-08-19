@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>animation</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: deepskyblue;
+            margin-top: 20px;
+
+        }
+
+        .test1{
+
+            /*animation-name: summer;*/
+            /*animation-duration: 1s;*/
+            /*animation: summer 1s infinite;*/
+
+            /*animation: summer 1s 2; */
+            animation: summer 1s  3s  infinite;
+        }
+
+
+        .test2{
+
+
+            animation: summer-1 2s  infinite;
+        }
+
+        .test3{
+
+
+            animation: summer-3 5s  2;
+        }
+        @keyframes summer  {
+            0%{
+                background: deepskyblue;
+            }
+
+
+
+            100%{
+                background: red;
+            }
+        }
+
+        @keyframes summer-1  {
+            0%{
+                background: deepskyblue;
+                transform: translateX(0);
+            }
+
+            50%{
+                background: red;
+                transform: translateY(-10px);
+            }
+
+            100%{
+                background: deepskyblue;
+                transform: translateX(0);
+            }
+
+        }
+
+        @keyframes summer-3  {
+            0%{
+                background: deepskyblue;
+                transform: translateX(0);
+            }
+
+
+            20%{
+                background: palegreen;
+                transform: translateX(800px) translateY(500px) rotate(600deg);
+            }
+
+
+            50%{
+                background: crimson;
+                transform: translateX(300px) translateY(-200px) ;
+            }
+
+            80%{
+                background: green;
+                transform: translateX(100px) translateY(700px);
+            }
+
+
+            100%{
+                background: red;
+                transform: translateX(0px) translateY(0px);
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="test1">test1</div>
+<div class="test2">test2</div>
+<div class="test3">test3</div>
+
+</body>
+</html>

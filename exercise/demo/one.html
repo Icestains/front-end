@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css-test-1</title>
+    <style>
+        /*元素选择器*/
+        p{
+          font-size: 30px;
+            color: yellow;
+        }
+
+        div{
+            font-size: 40px;
+            color: green;
+        }
+
+        h1{
+            font-size: 25px;
+            color:darkblue;
+        }
+        /*元素选择器*/
+
+        h3{
+            color: red;
+        }
+
+        /*class选择器 class名字前加一个. 号*/
+        .tow{
+            font-size: 50px;
+            color: chartreuse;
+        }
+        /*class选择器*/
+
+        /*id选择器  id名字前加一个 # 号*/
+        #one{
+            font-size: 30px;
+            color: palevioletred;
+        }
+        /*id选择器*/
+
+        /*后代选择器*/
+        #pOne{
+            font-size: 20px;
+            font-family: 微软雅黑;
+            font-weight: 800;
+            color: red;
+        }
+
+        #pOne span{
+            font-size: 30px;
+            color: black;
+        }
+        /*后代选择器*/
+
+        /*伪类选择器*/
+        a{
+            /*background: green;*/
+            color: black;
+        }
+
+        a:hover{
+            font-size: 40px;
+            color: white;
+            background: black;
+            transition: 3s;
+        }
+        /*伪类选择器*/
+
+
+        /*==================================*/
+        #div-one{
+            /*color改变字体颜色*/
+            color: red;
+            /*background设置背景颜色*/
+            background: black;
+            /*width设置宽度*/
+            width: 400px;
+            /*height设置高度*/
+            height: 300px;
+            /*font-size设置字体大小*/
+            font-size: 22px;
+            /*font-family设置字体格式*/
+            font-family: 微软雅黑;
+            /*text-align设置字体对齐方式*/
+            text-align: center;
+        }
+
+        .h4-one{
+            /*class选择器和id选择器权重更高*/
+            color: red;
+            font-size: 40px;
+        }
+hove
+        h4{
+            /*后来居上原则*/
+            color: palevioletred;
+        }
+        /*==================================*/
+
+        ul li{
+            list-style-type: none;
+        }
+
+        .p-one{
+            font-size: 35px;
+            text-indent: 35px;
+        }
+    </style>
+</head>
+<body>
+<!--内联样式-->
+    <div style="color:red;">css练习1</div>
+<!--内部样式表-->
+    <p>css练习2</p>
+<!--内部样式表-->
+    <div>我是div1</div>
+    <div>我是div2</div>
+
+<h1>我是标题h1</h1>
+<h2>我是标题h2</h2>
+
+
+    <h3 id="one">h3-1 id选择器</h3>
+<!--class选择器-->
+    <h3 class="tow">h3-2 class 选择器</h3>
+<!--class选择器-->
+    <h3 class="tow">在一个html页面中,只能有一个id选择器</h3>
+
+<!--后代选择器-->
+<p id="pOne">这是第一个段落<span>我是span</span></p>
+<p>这是第一二段落<span>我是span</span></p>
+<!--后代选择器-->
+
+<!--伪类选择器-->
+    <!--:link-->
+    <!--:hover-->
+    <!--:visited-->
+    <!--:focus-->
+    <!--:active-->
+<a href="http://www.sail.name/2017/07/08/link-talk/">我是一个链接,点我呀</a>
+<!--伪类选择器-->
+<div id="div-one">我是一个div,haha</div>
+
+<h4 class="h4-one">h4</h4>
+<hr>
+
+<ul>
+    <li>html</li>
+    <li>css</li>
+    <li>JS</li>
+</ul>
+
+<p class="p-one">测试段落</p>
+</body>
+</html>

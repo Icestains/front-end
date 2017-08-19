@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>清除浮动</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            padding: 10px;
+
+            /*position: absolute;*/
+            /*position: fixed;*/
+
+            /*父元素同步float*/
+            /*float: left;*/
+            /*父元素同步float*/
+
+            /*设置overflow*/
+                /*创建了一个BFC*/
+                /*overflow: hidden;*/
+                /*创建了一个BFC*/
+            /*设置overflow*/
+        }
+
+
+        /*伪元素*/
+        /*.container:after{*/
+            /*clear: both;*/
+            /*display: block;*/
+            /*content: " ";*/
+        /*}*/
+        /*伪元素*/
+
+        .inner{
+            width: 100px;
+            height: 100px;
+            background: deepskyblue;
+            border-left: 2px solid red;
+            float: left;
+        }
+
+
+        /*标签法*/
+
+        .clearFloat{
+            clear: both;
+        }
+        /*标签法*/
+
+
+        .one{
+            width: 300px;
+            height: 250px;
+            background: green;
+            float: left;
+        }
+
+
+        .tow{
+            width: 300px;
+            height: 250px;
+            background: red;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<section class="container">
+    <div class="inner">1</div>
+    <div class="inner">2</div>
+    <div class="inner">3</div>
+
+    <!--标签法-->
+    <!--<div class="clearFloat"></div>-->
+    <!--标签法-->
+</section>
+
+<h3>利用BFC清楚浮动</h3>
+<p>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素</p>
+
+<div class="one">one</div>
+<div class="tow">tow</div>
+
+
+</body>
+</html>

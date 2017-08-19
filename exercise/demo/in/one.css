@@ -1,0 +1,36 @@
+div {
+  width: 400px;
+  height: 400px;
+  border: 1px solid #000;
+  background: #008000;
+}
+h1 {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #000;
+  background: #008000;
+}
+p {
+  border: 1px solid #000;
+}
+p:nth-child(1) {
+  width: 15px;
+}
+p:nth-child(2) {
+  width: 30px;
+}
+p:nth-child(3) {
+  width: 45px;
+}
+p:nth-child(4) {
+  width: 60px;
+}
+p:nth-child(5) {
+  width: 75px;
+}
+/*
+ * 多行注释
+ */
+/*
+ * 多行缓冲注释
+ */

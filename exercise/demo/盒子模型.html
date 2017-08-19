@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>盒子模型</title>
+    <style>
+        .one{
+            /*========== 标准盒子模型 ==============*/
+
+            box-sizing: content-box;
+
+            /*border边框*/
+            border: 5px solid black;
+            /*border边框*/
+
+            /*content*/
+            width: 200px;
+            height: 200px;
+            /*content*/
+
+            /*padding: 内边距;*/
+            padding: 10px;
+            /*padding: 内边距;*/
+
+            /*margin:外边距;*/
+            margin: 20px;
+            /*margin:外边距;*/
+
+
+            /*========== 标准盒子模型 ==============*/
+        }
+
+        .tow{
+            /*========== 怪异盒子模型 ==============*/
+
+            box-sizing: border-box;
+
+            /*border边框*/
+            border: 5px solid black;
+            /*border边框*/
+
+            /*content*/
+            width: 200px;
+            height: 200px;
+            /*content*/
+
+            /*padding: 内边距;*/
+            padding: 10px;
+            /*padding: 内边距;*/
+
+            /*margin:外边距;*/
+            margin: 20px;
+            /*margin:外边距;*/
+
+
+            /*========== 怪异盒子模型 ==============*/
+        }
+
+    </style>
+</head>
+<body>
+<!--margin  外边距-->
+<!--border  边框-->
+<!--padding 内边距-->
+<!--content 内容 -->
+<div class="one">
+    标准盒子学习
+</div>
+
+<hr>
+
+<div class="tow">
+    怪异盒子学习
+</div>
+
+
+<p>
+box-sizing <br>
+content-box  标准盒子模型(默认值) <br>
+border-box   怪异盒子模型 IE浏览器下以前的情况 <br>
+inherit      继承父元素的盒子模型
+</p>
+
+
+<h3>区别</h3>
+<p>
+    在怪异盒子里面 <br>
+    content(width height) = width + border + padding
+    200 = 170 + (10 + 5) * 2
+</p>
+
+
+</body>
+</html>

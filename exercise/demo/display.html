@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>display</title>
+    <style>
+        .one{
+            display: inline;
+            border: 5px solid black;
+            width: 200px;
+            height: 200px;
+
+        }
+
+        .tow{
+            display: block;
+            border: 5px solid black;
+            width: 250px;
+            height: 200px;
+            padding: 50px;
+        }
+
+        .three{
+            border: 5px solid black;
+            width: 150px;
+            height: 100px;
+            background-color: red;
+            display: none;
+        }
+
+        .four{
+            border: 2px solid black;
+            width: 150px;
+            height: 100px;
+            background-color: deepskyblue;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<!--内联的设置width height 无效-->
+
+    <div class="one">display 学习1111111111111111111111111</div>
+    <div class="one">display 学习2222</div>
+    <div class="one">display 学习</div>
+    <div class="one">display 学习</div>
+<hr>
+<br>
+<!--内联的设置width height 无效-->
+<!--块级的可以设置width height-->
+
+    <div class="tow">display 学习111111111111111111</div>
+    <div class="tow">display 学习2222</div>
+    <div class="tow">display 学习</div>
+    <div class="tow">display 学习</div>
+<!--块级的可以设置width height-->
+<br>
+<div class="three">display none</div>
+<br>
+<div class="four">inline-block </div>
+<div class="four">inline-block </div>
+<div class="four">inline-block </div>
+</body>
+</html>

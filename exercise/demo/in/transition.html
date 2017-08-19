@@ -9,9 +9,10 @@
     <style>
         div{
             width: 100px;
-            height: 100px;
+            height: 50px;
             background: deepskyblue;
             margin-top: 20px;
+            float: left;
         }
 
         .test1:hover{
@@ -29,28 +30,49 @@
             transition-delay: 0.5s;
         }
 
+        .one{
+            clear: both;
+        }
+
         .test3{
+            width: 150px;
+            border-radius: 10px;
+            margin:0 0;
+            float: left;
             transition-property: width background;
-            transition-duration: 2s;
+            transition-duration: 0.8s;
         }
 
         .test3:hover{
-            width: 400px;
-            height: 300px;
+            height: 400px;
             background: red;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-in-out;
         }
 
+        .test4{
+            transition-duration: 0.5s;
+        }
 
         .test4:hover{
-            transform: translateX(400px);
-            transition-duration: 3s;
-            transition-timing-function:  ease;
+            width: 400px;
+            /*transform: translateX(-300px);*/
+            transition-duration: 1s;
+            transition-timing-function:  ease-in-out;
+        }
+
+        .test5{
+            transition-duration: 2s;
         }
 
         .test5:hover{
             transform: translateX(400px);
             transition-duration: 3s;
             transition-timing-function:  linear;
+        }
+
+        .test6{
+            transition-duration: 2s;
         }
 
         .test6:hover{
@@ -70,10 +92,16 @@
 <body>
 <div class="test1">test1</div>
 <div class="test2">test2</div>
-<div class="test3">test3</div>
 <div class="test4">test4</div>
 <div class="test5">test5</div>
 <div class="test6">test6</div>
 <div class="test7">test7</div>
+
+<div class="test3 one">test3</div>
+<div class="test3">test3</div>
+<div class="test3">test3</div>
+<div class="test3">test3</div>
+<div class="test3">test3</div>
+<div class="test3">test3</div>
 </body>
 </html>

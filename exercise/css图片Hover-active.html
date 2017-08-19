@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css图片Hover-active</title>
+
+	<style>
+		img{
+			cursor: pointer;
+			width: 1280px;height: 720px;
+			top:50%;left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			position: absolute;
+			transition: 0.5s;
+		}
+
+		img:hover{
+			width: 1408px;
+			height: 792px;
+		}
+
+		img:active{
+			width: 1152px;
+			height: 648px;
+		}
+	</style>
+
+
+</head>
+<body>
+<strong>点击图片</strong>
+	<img src="http://upload-images.jianshu.io/upload_images/3464381-ddd5f8bedf0c9ba3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" name="stardust" alt="星尘">
+	
+</body>
+</html>

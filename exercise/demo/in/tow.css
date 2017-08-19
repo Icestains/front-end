@@ -1,0 +1,49 @@
+div {
+  width: 200px;
+  height: 40px;
+  background: #ff8c00;
+}
+
+h1{
+  height: 300px;
+  width: 300px;
+  background: green;
+}
+h2 {
+  width: 100px;
+  height: 100px;
+  background: #e9967a;
+  animation: car 3s infinite;
+}
+@-moz-keyframes car {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes car {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes car {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes car {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
