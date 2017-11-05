@@ -3,50 +3,21 @@
 <head>
 	<meta charset="UTF-8">
 	<title>minesweeper</title>
-	<style>
-
-	div{
-		width: 50px;
-		height: 50px;
-		background: black;
-		position: absolute;
-		font-size: 20px;
-		text-align:center;
-		line-height: 50px;
-		color: #66ccff;
-	}
-
-	div:active{
-		width: 45px;
-		height: 45px;
-		background: green;
-	}
-	
-	div:visited{
-		width: 45px;
-		height: 45px;
-	}
-
-	a:visited{
-		color: #66ccff;
-	}
-		
-
-	</style>
+	<link rel="stylesheet" href="./ms.css">
 
 	<script>
 		
 		window.onload = function () {
-			var aDiv=document.getElementsByTagName('div');
+			var aSct=document.getElementsByTagName('section');
 
 			for(var i=0;i<81;){
-				document.body.innerHTML += '<div>'+ '<a href="#">' + ++i + '</a>' +'</div>';
+				document.body.innerHTML += '<section class="outter"><div class="inner">'+ '<a href="#">' + ++i + '</a>' +'</div></section>';
 			}
 
-			var	len = aDiv.length;
+			var	len = aSct.length;
 			for (var i = 0,j = 0; i < len; i++,j++) {
-				aDiv[i].style.left = 10 + i%9*60 + 'px';
-				aDiv[i].style.top =10 + (i-i%9)/9*60 + 'px';
+				aSct[i].style.left = 10 + i%9*60 + 'px';
+				aSct[i].style.top =10 + (i-i%9)/9*60 + 'px';
 			}
 		}
 
