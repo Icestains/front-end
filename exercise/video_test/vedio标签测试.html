@@ -12,20 +12,24 @@
 
   <div id="main">
     
-    <button id="button1" onclick="playPause()" onmouseover = "showBtn()"></button>
+    <button id="button1" onclick="playPause()" onmouseover = "showPlayBtn()" onmouseout = "disPlayBtn()"></button>
 
-    <video id="video1" width="100%"  onclick = "playPause()" onmouseover = "showBtn()" onmouseout = "showBtn()" src="Google_earth.mp4"></video>
+    <video id="video1" width="100%"  onclick = "playPause()" onmouseover = "showPlayBtn()" onmouseout = "disPlayBtn()" src="Google_earth.mp4"></video>
 
+  
+    <div id="divs">
+      
+      <button id="button2" onclick="stopPlay()">暂停</button>
+      
+      <button id="button3" onclick="rePlay()">播放</button>
+      
+      <button id="button6" onclick="checkEnded()">检查是否暂停</button>
+      <button id="button4" onclick="onoffVolume()">关闭声音</button>
+
+
+    </div>
   </div>
 
-  <button id="button2" onclick="stopPlay()">跳过动画</button>
-  
-  <button id="button3" onclick="rePlay()">重新观看</button>
-  
-  <button id="button4" onclick="onoffVolume()">关闭声音</button>
-
-
-  <button id="button6" onclick="checkEnded()">检查是否结束</button>
 
 
 

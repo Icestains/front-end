@@ -4,48 +4,50 @@ var oBtn2 = document.getElementById("button2");
 var oBtn3 = document.getElementById("button3");
 var oBtn4 = document.getElementById("button4");
 
-myVideo.autoplay=true;
-
-if(myVideo.ended){
-  myVideo.style.display="none";
-  oBtn2.style.display="none";
-  oBtn3.style.display="block";
-  oBtn4.style.display="none";
-}
 
 function playPause(){
   if (myVideo.paused) {
-    myVideo.play();
+    rePlay();
   }
   else {
-    myVideo.pause();
+    stopPlay();
   }
+  // showBtn();
 }
 
 function stopPlay(){
   myVideo.pause();
-  myVideo.style.display="none";
+  oBtn1.style.display = "block";
   oBtn2.style.display="none";
   oBtn3.style.display="block";
-  oBtn4.style.display="none";
+  // oBtn4.style.display="none";
 }
 
 function rePlay(){
-  myVideo.style.display="block";
   myVideo.play();
+  myVideo.style.display="block";
+  oBtn1.style.display = "none";
   oBtn2.style.display="block";
   oBtn3.style.display="none";
-  oBtn4.style.display="block";
+  // oBtn4.style.display="block";
 }
 
-function showBtn(){
-  if(oBtn1.style.display == "block"){
-  oBtn1.style.display = "none";
-  }
-  else{
+function showPlayBtn(){
+
   oBtn1.style.display = "block";    
-  }
+  
 }
+function disPlayBtn(){
+  if (myVideo.paused) {
+    oBtn1.style.display = "block";    
+    
+  } else{
+    oBtn1.style.display = "none";
+
+  }
+  
+}
+
 
 
 
@@ -63,5 +65,6 @@ function onoffVolume(){
 }
 
 function checkEnded(){
-  alert(myVideo.ended);
+  // return myVideo.paused; 
+  alert(myVideo.paused);
 }

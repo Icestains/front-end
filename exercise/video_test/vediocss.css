@@ -1,44 +1,79 @@
-*{
-  margin : 0;
-  padding: 0;
-  border:0;
+*
+{
+    margin: 0;
+    padding: 0;
+
+    border: 0;
 }
 
-#main{
-  width: 960px;
-  height: 540px;
-  text-align: center;
-  position: relative;
-  display: block;
-  background-image: url(background.png);
-  background-repeat:no-repeat;
-  background-position:center;
+#main
+{
+    /*position: absolute;*/
+    position: relative;
+    left: 50%;
+
+    display: block;
+
+    width: 1280px;
+    max-width: 1280px;
+    height: 720px;
+    max-height: 720px;
+
+    transform: translateX(-50%);
+    text-align: center;
+    /*background-image: url(background.png);*/
+
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-#video1{
-    overflow: hidden;
+#video1
+{
     z-index: -1;
+
+    overflow: hidden;
 }
 
-#button1{
-  width: 100px;
-  height: 100px;
-  right: 90%;
-  bottom: 50px;
-  transform: translateX(50%);
-  background-image: url(Play_Button2.png);
+#button1
+{
+    position: absolute;
+    z-index: 1;
+    bottom: 50px;
+    left: 50px;
+
+    display: block;
+    /*position: relative;*/
+
+    width: 100px;
+    height: 100px;
+    /*transform: translateX(50%);*/
+
+    background-image: url(Play_Button2.png);
+}
+
+#divs{
   position: absolute;
-  display: none;
-  z-index: 1;
+    top: 720px;
 }
 
-#button2, #button3, #button4, #button5, #button6{
-  width: 100px;
-  height: 40px;
-  float: left;
-  overflow: hidden;
+#button2,
+#button3,
+#button4,
+#button5,
+#button6
+{
+    
+
+    display: block;
+    float: left;
+    overflow: hidden;
+
+    width: 100px;
+    height: 40px;
 }
 
-#button3,#button5{
-  display: none;
+#button2,
+#button5
+{
+    display: none;
 }
