@@ -1,119 +1,128 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>无标题文档</title>
-<script>
-window.onload = function () {
-	var oUl = document.getElementById('list');
-	var aLi = oUl.getElementsByTagName('li');
-	var oP  = document.getElementById('sums');
-	var sumPR = 0;
-	var sumNu = 0;
-	var Exp = [aLi.length];
-	var ExpNum = 0;
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>无标题文档</title>
+	<script>
+		window.onload = function () {
+			var oUl = document.getElementById('list');
+			var aLi = oUl.getElementsByTagName('li');
+			var oP = document.getElementById('sums');
+			var sumPR = 0;//总价
+			var sumNu = 0;//总数
+			var Exp = [aLi.length];//用来存放价格的数组
 
-	// fnCount ( aLi[0] );
-	for ( var i=0; i<aLi.length; i++ ) {
-		fnCount ( aLi[i] );
-	}
-	
-	function fnCount ( li ) {
-		var aBtn    = li.getElementsByTagName ('input');
-		var oStrong = li.getElementsByTagName ('strong')[0];
-		var oEm     = li.getElementsByTagName ('em')[0];
-		var oSpan   = li.getElementsByTagName ('span')[0];
-		var n       = oStrong.innerHTML;			// '0'
-		var price   = parseFloat(oEm.innerHTML);			// 12.5
-		var index = 0;
-
-		aBtn[0].onclick = function () {
-			if ( n > 0 ) {
-				n--;
-				sumPR -= price;
-				sumNu --;
-				showPrc(n,sumNu,sumPR);
-			}if ( n == 0 ) {
-				index = 0;
-			}
-		};
-		aBtn[1].onclick = function () {
-			index = 1;
-			n++;
-			sumPR += price;
-			sumNu++;
-			showPrc(n,sumNu,sumPR);
-		};
-		alert( price );
-		for ( var i=0; i<aLi.length; i++ ) {
-			if (index==1) {
-				Exp[i] = price;
-			} else {
+			for (var i = 0; i < aLi.length; i++) {
 				Exp[i] = 0;
+				fnCount(aLi[i], i);
 			}
-		}
-		function showPrc(N,Nu,Pr){
-			oStrong.innerHTML = N;
-			oSpan.innerHTML = N*price + '元';
 
-			if( price > Exp && n != 0 ){
-				Exp=price;
+			function fnCount(li, i) {
+				var aBtn = li.getElementsByTagName('input');
+				var oStrong = li.getElementsByTagName('strong')[0];
+				var oEm = li.getElementsByTagName('em')[0];
+				var oSpan = li.getElementsByTagName('span')[0];
+				var n = oStrong.innerHTML;			// '0'
+				var price = parseFloat(oEm.innerHTML);			// 12.5
+				var index = 0;//是否添加的标记
+
+				aBtn[0].onclick = function () {
+					if (n > 0) {
+						n--;
+						sumPR -= price;
+						sumNu--;
+						showPrc(n, sumNu, sumPR);
+					} if (n == 0) {
+						index = 0;
+					}
+				};
+				aBtn[1].onclick = function () {
+					index = 1;
+					n++;
+					sumPR += price;
+					sumNu++;
+					showPrc(n, sumNu, sumPR);
+				};
+
+				function showPrc(N, Nu, Pr) {
+					if (index == 1 && Exp[i] == 0) {
+						Exp[i] = price;
+					} else {
+						Exp[i] = 0;
+					}
+					var maxPR = Exp[0];
+					for (var j = 0; j < aLi.length; j++) {
+						if (Exp[j] > maxPR) {
+							maxPR = Exp[j];
+						}
+
+					}
+
+					oStrong.innerHTML = N;
+					oSpan.innerHTML = N * price + '元';
+
+					if (price > Exp && n != 0) {
+						Exp = price;
+					}
+					oP.innerHTML = '商品合计共：' + Nu + '件，共花费了：' + Pr + '元<br />其中最贵的商品单价是：' + maxPR + '元';
+				}
 			}
-			oP.innerHTML = '商品合计共：' + Nu + '件，共花费了：' + Pr + '元<br />其中最贵的商品单价是：' + Exp + '元';
-		}
-	}
 
-	// function sumPr( aLi ){
-
-	// }
-};
-</script>
+		};
+	</script>
 </head>
 
 <body>
 
-<ul id="list">
-	<li>
-		<input type="button" value="-" />
-	    <strong>0</strong>
-	  	<input type="button" value="+" />
-	    单价：<em>12.5元</em>
-	    小计：<span>0元</span>
-	</li>
-	<li>
-	  	<input type="button" value="-" />
-	    <strong>0</strong>
-	  	<input type="button" value="+" />
-	    单价：<em>10.5元</em>
-	    小计：<span>0元</span>
-	</li>
+	<ul id="list">
 		<li>
-	  	<input type="button" value="-" />
-	    <strong>0</strong>
-	  	<input type="button" value="+" />
-	    单价：<em>8.5元</em>
-	    小计：<span>0元</span>
-	 </li>
-	<li>
-	  	<input type="button" value="-" />
-	    <strong>0</strong>
-	  	<input type="button" value="+" />
-	    单价：<em>8元</em>
-	    小计：<span>0元</span>
-	 </li>
-	<li>
-	  	<input type="button" value="-" />
-	    <strong>0</strong>
-	  	<input type="button" value="+" />
-	    单价：<em>14.5元</em>
-	    小计：<span>0元</span>
-	 </li>
-</ul>
+			<input type="button" value="-" />
+			<strong>0</strong>
+			<input type="button" value="+" /> 单价：
+			<em>12.5元</em>
+			小计：
+			<span>0元</span>
+		</li>
+		<li>
+			<input type="button" value="-" />
+			<strong>0</strong>
+			<input type="button" value="+" /> 单价：
+			<em>10.5元</em>
+			小计：
+			<span>0元</span>
+		</li>
+		<li>
+			<input type="button" value="-" />
+			<strong>0</strong>
+			<input type="button" value="+" /> 单价：
+			<em>8.5元</em>
+			小计：
+			<span>0元</span>
+		</li>
+		<li>
+			<input type="button" value="-" />
+			<strong>0</strong>
+			<input type="button" value="+" /> 单价：
+			<em>8元</em>
+			小计：
+			<span>0元</span>
+		</li>
+		<li>
+			<input type="button" value="-" />
+			<strong>0</strong>
+			<input type="button" value="+" /> 单价：
+			<em>14.5元</em>
+			小计：
+			<span>0元</span>
+		</li>
+	</ul>
 
-<p id="sums">
-	商品合计共：0件，共花费了：0元<br />
-	其中最贵的商品单价是：0元
-</p>
+	<p id="sums">
+		商品合计共：0件，共花费了：0元
+		<br /> 其中最贵的商品单价是：0元
+	</p>
 
 </body>
+
 </html>
