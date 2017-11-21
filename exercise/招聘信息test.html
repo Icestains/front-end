@@ -7,165 +7,157 @@
 	<!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
 	<title>招聘信息test</title>
 	<style type="text/css">
-	body,p,h1,h2,h3,h4,h5,h6,dl,dd{margin:0;}
-	ol,ul{
-    	list-style:none;
-	    padding:0;
-    	margin:0;
-	}
-	body {font-size: 18px;}
-	li {list-style:none;}
-	a{text-decoration:none;}
-	h2{font-size: 20px;}
-
-		
-		
-		#up {
-			position: relative;
-			height: 30px;width: 100px;
-			left: 400px;top: 100px;
-			background: rgb(255, 165, 0);
+		body,p,h1,h2,h3,h4,h5,h6,dl,dd{margin:0;}
+		ol,ul{
+	    	list-style:none;
+		    padding:0;
+	    	margin:0;
+		}
+		body {font-size: 18px;}
+		li {list-style:none;}
+		a{text-decoration:none;}
+		h2{font-size: 20px;}
+		body{
+			width: 1200px;
+			margin: auto;
 		}
 
-		#upleft,#upright{
-			font-size: 20px;line-height: 28px;
-			float: left;
-			margin-left: 4px;
-			background: rgb(255, 165, 0);
+		/*.clear{
+			clear: both;
 		}
-		#upright{float: right;margin-right: 4px;}
-
-		.qianduan {
-			float: left;
-			margin-left: 400px;
-			font-size: 20px;
-			height: 30px;
-			width: 50px;
-			text-align: center;
-			background: rgb(255, 165, 0);
-		}
-
-		.houduan {
-			float: left;
-			height: 30px;
-			width: 50px;
-			font-size: 20px;
-			text-align: center;
-			background: rgb(255, 255, 255);
-		}
-
-		.xia {
-			width: 300px;height: 700px;
-			position: relative;left: 400px;
-		}
-
-		#qianxia ,#houxia{
-			display: block;
-			line-height: 40px;
-		}
-		#houxia {
+*/
+		ul{
 			display: none;
+		}
+		.up{
+			/*position: relative;*/
+			/*top: 120px;*/
+			display: block;
+			width: 100%;
+			height: 122px;
+			border-bottom: 1px solid rgb(255, 165, 0);
+		}
+		.up li{
+			position: relative;
+			top: 100px;
+			float: left;
+		}
+		.activeup{
+			background: rgb(255, 165, 0);
+		}
+		.show{
+			display: block;
 		}
 
 		#tips{
 			display: none;
 			height: 200px;width: 300px;line-height: 28px;
-			left: 600px;top: 50px;
-			
+			left: 200px;top: 50px;
 			background: #f1f1f1;
 			position: absolute;
 		}
-		
+		#tips ul{
+			display: block;
+		}
 	</style>
 </head>
 
 <script type="text/javascript">
-		window.onload = function(){
-			var oQd = document.getElementById('upleft')
-			var oHd = document.getElementById('upright')
-			var oList = document.getElementById('show')
-			var oTips = document.getElementById('tips')
-			var oqian = document.getElementById('qianxia')
-			var ohou = document.getElementById('houxia')
+	window.onload = function(){
+		var oDiv  = document.getElementById('main');
+		var aUl   = oDiv.getElementsByTagName('ul')[0];
+		var aUld   = oDiv.getElementsByTagName('ul')[1];
+		var aLi1   = aUl.getElementsByTagName('li')[0];
+		var aLi2   = aUl.getElementsByTagName('li')[1];
+		var oTips = document.getElementById('tips');
+		var aUltips = oTips.getElementsByTagName('ul');
+		var aLitips = oTips.getElementsByTagName('li')[0];
 
-			
-
-			oList.onmouseover=function(){
-				oTips.style.display='block';
-			}
-			oList.onmouseout=function(){
-				oTips.style.display='none';
-			}
-			oQd.onclick=function(){
-				oqian.style.display='block';
-				ohou.style.display='none';
-			}
-			oHd.onclick=function(){
-				ohou.style.display='block';
-				oqian.style.display='none';
+		var arrUrlfe = [
+			'前端工程师',
+			'网站前端页面设计',
+			'高级web前端工程师',
+			'HTML5前端工程师',
+			'前端工程师',
+			'网站前端设计',
+			'诚招web前端开发工程师',
+			'web前端DIV+CSS',
+			'前端设计',
+			'招聘 前端页面工作者',
+			'页面前端工程师',
+			'高级web前端工程师',
+			'HTML5前端工程师',
+			'前端工程师',
+			'网站前端设计'];
+		var arrUrlbe = [
+			'PHP工程师',
+			'诚招JAVA开发工程师',
+			'JAVA工程师',
+			'.NET工程师',
+			'诚聘PHP程序猿',
+			'PHP高级工程狮'];
+		var oldLi = null;
+		var arrUrltips = [
+				'<li class="col"><strong>职位</strong>：前端页面</li>',
+				'<li class="col"><strong>招聘人数</strong>：2人</li>',
+				'<li class="col"><strong>工作地点</strong>：西城</li>',
+				'<li class="col"><strong>工作经历</strong>：不限</li>',
+				'<li class="col"><strong>学历</strong>：不限</li>',
+				'<li class="col"><strong>薪资</strong>：面议</li>']
+		var num = 0;
+		// .onmouseover=function(){
+		// 	oTips.style.display='block';
+		// }
+		// oList.onmouseout=function(){
+		// 	oTips.style.display='none';
+		// }
+		function init(a){
+			aUld.innerHTML = '';
+			for( var i=0; i<a.length; i++ ){
+				aUld.innerHTML += '<li><a href="#">' + a[i] +'</a></li>';
 			}
 		}
+		function inittips(a){
+			aUltips.innerHTML='';
+			for( var i=0; i<a.length; i++ ){
+				aUltips.innerHTML += '<li><a href="#">' + a[i] +'</a></li>';
+			}
+		}
+		init(arrUrlfe);
+		// oldLi = aLi[num];
+		aLi1.onclick=function(){
+			init(arrUrlfe);
+		}
+		aLi2.onclick=function(){
+			init(arrUrlbe);
+		}
+
+
+	}
 </script>
 
 <body>
-<div style="height: 130px;border-bottom-width: 1px;border-bottom-color: rgb(255, 165, 0);border-bottom-style: solid;">
-	<div id = "up">
-	<ul>
-		<li><a id="upleft" href="#">前端</a></li>
-		<li><a id="upright" href="#">后端</a></li>
-	</ul>
-	</div>
-</div>
+	<div id="main">
+		<ul id="up" class="up">
+			<li><a class="activeup" href="#">前端</a></li>
+			<li><a class="" href="#">后端</a></li>
+		</ul>
 
-	
-	<div class="xia">
-		<div id="qianxia">
-			<ul>
-				<li><a id ="show" href="#">前端工程师</a></li>
-				<li><a href="#">网站前端页面设计</a></li>
-				<li><a href="#">高级web前端工程师</a></li>
-				<li><a href="#">HTML5前端工程师</a></li>
-				<li><a href="#">前端工程师</a></li>
-				<li><a href="#">网站前端设计</a></li>
-				<li><a href="#">诚招web前端开发工程师</a></li>
-				<li><a href="#">web前端DIV+CSS</a></li>
-				<li><a href="#">前端设计</a></li>
-				<li><a href="#">招聘 前端页面工作者</a></li>
-				<li><a href="#">页面前端工程师</a></li>
-				<li><a href="#">高级web前端工程师</a></li>
-				<li><a href="#">HTML5前端工程师</a></li>
-				<li><a href="#">前端工程师</a></li>
-				<li><a href="#">网站前端设计</a></li>
-			</ul>
-		</div>
-		<div id="houxia">
-			<ul>
-				<li><a href="#">PHP工程师</a></li>
-				<li><a href="#">诚招JAVA开发工程师</a></li>
-				<li><a href="#">JAVA工程师</a></li>
-				<li><a href="#">.NET工程师</a></li>
-				<li><a href="#">诚聘PHP程序猿</a></li>
-				<li><a href="#">PHP高级工程狮</a></li>
-			</ul>
-		</div>
+		<ul class="show">
+
+		</ul>
+
 	</div>
+
 	<div id="tips">
 		<span id="arrow" style="top: 107px;"></span>
 		<div id="tipsContent">
 			<h2>北京华夏安业科技有限公司 </h2>
 			<ul>
-				<li class="col"><strong>职位</strong>：前端页面</li>
-				<li class="col"><strong>招聘人数</strong>：2人</li>
-				<li class="col"><strong>工作地点</strong>：西城</li>
-				<li class="col"><strong>工作经历</strong>：不限</li>
-				<li class="col"><strong>学历</strong>：不限</li>
-				<li class="col"><strong>薪资</strong>：面议</li>
+				
 			</ul>
 		</div>
 	</div>
-
-
-	
 
 </body>
 
