@@ -1,22 +1,60 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>无标题文档</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>无标题文档</title>
 </head>
 
 <body>
 
-请输入QQ号码：<input type="text" />
-<input type="button" value="判断" />
+    请输入QQ号码：
+    <input type="text" />
+    <input type="submit" value="判断" />
 
 
-<br />
-1、有没有输入<br />
-2、输入的是不是数字<br />
-3、不能有0在前面<br />
-4、不能是小数<br />
-5、输入的数字必须在5位以上、10位以内<br />
+    <br /> 1、有没有输入
+    <br /> 2、输入的是不是数字
+    <br /> 3、不能有0在前面
+    <br /> 4、不能是小数
+    <br /> 5、输入的数字必须在5位以上、10位以内
+    <br />
+    <p></p>
+    <script>
+        var oIn1 = document.getElementsByTagName('input')[0];
+        var oIn2 = document.getElementsByTagName('input')[1];
+        var oP = document.getElementsByTagName('p')[0];
 
+
+        oIn2.onclick = function () {
+
+            var qq = oIn1.value;
+            var tQq = typeof (qq);
+            var intQq = parseInt(qq);
+            var tIntQq = typeof (intQq);
+            
+            if (
+                qq == qq
+                && intQq == intQq
+                && tIntQq === 'number'
+                && !(intQq <= 0)
+                && !(qq[0] == 0)
+                && !(intQq != parseFloat(qq))
+                && !(qq.length < 5)
+                && !(qq.length > 10)
+            ) {
+
+                alert('ok')
+
+            } else {
+                if (qq === '') {
+                    oP.innerHTML += ' ==>> none <br>';
+                } else {
+                    oP.innerHTML += ' ==>> wronginput <br>';
+                }
+            }
+        }
+    </script>
 </body>
+
 </html>
