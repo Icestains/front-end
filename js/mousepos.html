@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#upper{
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			z-index: 999;
+		}
+		#moveDiv{
+			position: relative;
+			width: 50px;
+			height: 50px;
+			background: green;
+			transition: ease-in-out;
+			border-radius: 50%;
+		}
+	</style>
+</head>
+<body>
+
+
+	<div id="moveDiv" style="
+			top: 100px;
+			left: 100px;
+			" ></div>
+
+	<script>
+
+	var	oDiv = document.getElementById('moveDiv');
+	var down = false;
+	var cx = 0;
+	var cy = 0;
+	var sx = 0;
+	var sy = 0;
+
+	document.onmousemove = function(e) {
+		if(down){
+			var ev = e || event;
+			oDiv.style.top = ev.clientY - (cy - sy) + 'px';
+			oDiv.style.left = ev.clientX - (cx - sx) + 'px';
+			document.innerHTML = oDiv.style.top+'px'+oDiv.style.left+'px';
+		}
+	}
+	oDiv.onmousedown = function (){
+		cx = event.clientX;
+		cy = event.clientY;
+		sy = parseInt(oDiv.style.top);
+		sx = parseInt(oDiv.style.left);
+		if(!down){
+			down = true;
+		}
+	}
+	document.onmouseup = function(){
+		if(down){
+			down = false;
+		}
+	}
+
+	</script>
+</body>
+</html>
